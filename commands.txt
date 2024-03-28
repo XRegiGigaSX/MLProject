@@ -1,0 +1,3 @@
+conda activate venv/
+pip install -r requirements.txt to install packages in venv
+python -m src.components.data_ingestion

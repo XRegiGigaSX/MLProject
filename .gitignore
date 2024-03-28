@@ -36,6 +36,10 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
+# For my referrence
+commands.txt
+artifacts/
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
