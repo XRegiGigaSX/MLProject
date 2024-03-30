@@ -1,3 +1,7 @@
 conda activate venv/
 pip install -r requirements.txt to install packages in venv
 python -m src.components.data_ingestion
+
+day 5 - learned that i standard scaler should be used with_mean=false
+because the values become negative when subtracted with mean. instead
+it subtracts variance from the values which preserves positivity
