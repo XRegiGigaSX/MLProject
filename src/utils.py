@@ -11,6 +11,7 @@ from sklearn.model_selection import GridSearchCV
 
 from src.exception import CustomException
 
+
 def save_object(file_path, obj):
     try:
         dir_path = os.path.dirname(file_path)
