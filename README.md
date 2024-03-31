@@ -1,1 +1,1 @@
-## Machine Learning Project on Clound
+## Machine Learning Project on Cloud (AWS)
