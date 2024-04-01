@@ -5,3 +5,41 @@ python -m src.components.data_ingestion
 day 5 - learned that i standard scaler should be used with_mean=false
 because the values become negative when subtracted with mean. instead
 it subtracts variance from the values which preserves positivity
+
+
+imp
+194831669500.dkr.ecr.us-east-1.amazonaws.com/score_predictor_ml  #uri
+
+
+steps to host on cloud AWS EC2
+dockerfile -> github/workflows -> ecr repo -> ec2 instance
+-> self hosted runner from ec2 console
+
+
+DOCKER commands :-
+
+docker build -t ml_project .
+docker images #check created images
+docker run -p 5000:5000 ml_project
+            [host port:container port]
+docker ps #check currently running images
+docker tag <old_name> <new_name>
+docker image rm -f <image_name> 
+docker push <image_name>:latest
+
+
+AWS EC2 instance :-
+#after connecting to instance
+sudo apt-get update -y
+sudo apt-get upgrade
+#imp
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker ubuntu #no need to use sudo again and again
+newgrp docker
+
+Azure Web App instance:- 
+#pushing image in container registry
+docker build -t rayyantestdocker.azurecr.io/mltest:latest .  #creating docker image with azure container registry url
+docker login rayyantestdocker.azurecr.io
+docker push rayyantestdocker.azurecr.io/mltest:latest
